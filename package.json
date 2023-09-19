@@ -1,0 +1,28 @@
+{
+  "name": "tranzak-node",
+  "version": "1.0.0",
+  "description": "TRANZAK API client for Nodejs",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "node test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HolyCorn-Software/tranzak-node.git"
+  },
+  "keywords": [
+    "TRANZAK",
+    "HolyCorn",
+    "Software"
+  ],
+  "author": "https://github.com/HolyCorn-Software",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HolyCorn-Software/tranzak-node/issues"
+  },
+  "homepage": "https://github.com/HolyCorn-Software/tranzak-node#readme",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  },
+  "types":"./index.d.ts"
+}
