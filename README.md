@@ -1,4 +1,4 @@
-# <div style='display:flex;align-items:center;gap:1em'><img src='./assets/icon.png' style='width:3em;height:3em;object-fit:contain;object-position:center;'> <div style='display:inline-flex'>TRANZAK Nodejs API client</div></div>
+# <div style='display:flex;align-items:center;gap:1em'><img src='./assets/icon.png' style='width:2em;height:2em;object-fit:contain;object-position:center;'> <div style='display:inline-flex'>TRANZAK Nodejs API client</div></div>
 
     This client allows the use of TRANZAK APIs via Nodejs.
 The documentation for the REST APIs, can be found [<b style='font-size:1.35em'>here</b>](https://docs.developer.tranzak.me/).
@@ -68,6 +68,28 @@ For example
 
     }
 
+    // Or, for other non-direct payment methods, use web redirect.
+    const transaction = await client.payment.collection.simple.chargeByWebRedirect(
+        {
+            mchTransactionRef: shortUUID.generate()
+        }
+    );
+
+    console.log(`Dear client, go to `, transaction.links.paymentAuthUrl)
+
 ```
 
-Proudly created, and maintained by [<b>HolyCorn Software</b>](https://github.com/HolyCorn-Software).
+## Payment Methods
+<blockquote >Mobile Money payments can be handled directly, using <b style='color:#79a'>payment.transfer.simple.toMobileMoney()</b> or <b style='color:#79a'>payment.collection.simple.chargeMobileMoney()</b>.
+
+All other payments such as card, and bank, are handle via <b style='color:#afb'>web redirect</b>.
+</blockquote>
+
+<div style='color:transparent;min-height:8em'>
+---
+</div>
+
+
+ 
+
+#### Proudly created, and maintained by [<b>HolyCorn Software</b>](https://github.com/HolyCorn-Software).

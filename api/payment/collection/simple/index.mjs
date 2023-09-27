@@ -35,7 +35,7 @@ export default class SimpleCollectionSection extends APISection {
 
     /**
      * This method creates a web redirect transaction.
-     * @param {tranzak_node.payment.collection.simple.MobileMoneyChargeParams} data 
+     * @param {tranzak_node.payment.collection.simple.WebRedirectChargeParams} data 
      * 
      */
     async chargeByWebRedirect(data) {
@@ -57,7 +57,7 @@ export default class SimpleCollectionSection extends APISection {
      * The request will be pushed directly to the user for authorization. 
      * 
      * ### To prevent abuse, access to this service will be **disabled** after 10 failed attempts.
-     * @param {tranzak_node.payment.collection.simple.WebRedirectChargeParams} data 
+     * @param {tranzak_node.payment.collection.simple.QRChargeParams} data 
      * 
      */
     async chargeByQR(data) {
