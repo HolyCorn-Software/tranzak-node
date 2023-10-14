@@ -1,0 +1,25 @@
+{
+    "presets": [
+        [
+            "@babel/env",
+            {
+                "targets": {
+                    "node": "16"
+                },
+                "modules": "cjs"
+            }
+        ]
+    ],
+    "ignore": [
+        "/node_modules/",
+        "/compat/"
+    ],
+    "plugins": [
+        [
+            "module-extension",
+            {
+                "mjs": "js"
+            }
+        ]
+    ]
+}

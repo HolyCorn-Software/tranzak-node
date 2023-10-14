@@ -2,9 +2,11 @@
   "name": "tranzak-node",
   "version": "1.0.0",
   "description": "TRANZAK API client for Nodejs",
-  "main": "index.mjs",
+  "main": "./compat/index.js",
+  "module": "./index.mjs",
   "scripts": {
-    "test": "node test.mjs"
+    "test": "node test.mjs",
+    "build": "babel ./ --out-dir ./compat --ignore node_modules,compat"
   },
   "repository": {
     "type": "git",
@@ -24,5 +26,11 @@
   "dependencies": {
     "node-fetch": "^3.3.2"
   },
-  "types":"./index.d.ts"
+  "types": "./index.d.ts",
+  "devDependencies": {
+    "@babel/cli": "^7.23.0",
+    "@babel/core": "^7.23.2",
+    "@babel/preset-env": "^7.23.2",
+    "babel-plugin-module-extension": "^0.1.3"
+  }
 }
