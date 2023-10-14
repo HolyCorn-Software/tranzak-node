@@ -1,3 +1,3 @@
 .
 
-Setup compatibility for older versions of Node.js, using babel.
+Fixed minor issue related to compatibility.
