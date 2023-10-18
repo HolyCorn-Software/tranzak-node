@@ -6,7 +6,6 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 var _section = require("./section.js");
 var _simpleCache = _interopRequireDefault(require("./simple-cache.js"));
-var _nodeFetch = _interopRequireDefault(require("node-fetch"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 /**
  * Copyright 2023 HolyCorn Software
@@ -15,6 +14,17 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
  * It is responsible for making requests, and sending responses
  */
 
+let realFetch;
+
+/**
+ * 
+ * @param  { URL | RequestInfo} url
+ * @param {RequestInit}  init
+ */
+async function fetch(url, init) {
+  realFetch ||= (await import('node-fetch')).default;
+  return await realFetch(...arguments);
+}
 const credentials = Symbol();
 const authCache = Symbol();
 class Transport {
@@ -38,7 +48,7 @@ class Transport {
     if (!this[authCache]) {
       this[authCache] = new _simpleCache.default({
         get: async () => {
-          const response = await (await (0, _nodeFetch.default)(`${this.apiUrl}/auth/token`, {
+          const response = await (await fetch(`${this.apiUrl}/auth/token`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -89,7 +99,7 @@ class Transport {
   }) {
     method ??= typeof body === 'undefined' ? 'GET' : 'POST';
     try {
-      const reply = await (await (0, _nodeFetch.default)(new URL(path, `${this.apiUrl}/xp021/`).href, {
+      const reply = await (await fetch(new URL(path, `${this.apiUrl}/xp021/`).href, {
         method,
         body: method.toUpperCase() == "POST" ? JSON.stringify(body) : undefined,
         headers: {

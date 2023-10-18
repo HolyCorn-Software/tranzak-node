@@ -6,13 +6,17 @@
                 "targets": {
                     "node": "16"
                 },
-                "modules": "cjs"
+                "modules": "cjs",
+                "exclude": [
+                    "proposal-dynamic-import"
+                ]
             }
         ]
     ],
     "ignore": [
         "/node_modules/",
-        "/compat/"
+        "/compat/",
+        ".test.mjs"
     ],
     "plugins": [
         [

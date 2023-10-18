@@ -6,7 +6,7 @@
   "module": "./index.mjs",
   "scripts": {
     "test": "node test.mjs",
-    "build": "babel ./ --out-dir ./compat --ignore node_modules,compat"
+    "build": "rm -rf ./compat && babel ./ --out-dir ./compat --ignore node_modules,compat,test.mjs,*/test.mjs,**/test.mjs"
   },
   "repository": {
     "type": "git",
