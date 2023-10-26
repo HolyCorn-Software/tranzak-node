@@ -24,7 +24,9 @@ const client = new TRANZAK(
 )
 
 
-await test('Payment', async () => {
+await test('TRANZAK', async () => {
     await (await import('./api/account/test.mjs')).default(client, test)
     await (await import('./api/payment/test.mjs')).default(client, test)
+    await (await import('./api/webhooks/test.mjs')).default(client, test)
+    process.exit()
 })

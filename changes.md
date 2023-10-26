@@ -1,7 +1,5 @@
 .
 
-Improved the build process, by making the system automatically remove test files.
+Added ability to process webhooks.
 
-Fixed a minor bug that affected compatibility.
-
-Updated documentation.
+Improved error reporting.
