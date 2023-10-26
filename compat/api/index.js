@@ -7,6 +7,7 @@ exports.default = void 0;
 var _transport = _interopRequireDefault(require("../lib/transport.js"));
 var _index = _interopRequireDefault(require("./account/index.js"));
 var _index2 = _interopRequireDefault(require("./payment/index.js"));
+var _index3 = _interopRequireDefault(require("./webhooks/index.js"));
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 /**
  * Copyright 2023 HolyCorn Software
@@ -23,6 +24,7 @@ class TRANZAK {
     const transport = new _transport.default(credentials);
     this.payment = new _index2.default(transport);
     this.account = new _index.default(transport);
+    this.webhook = new _index3.default(this);
   }
 }
 exports.default = TRANZAK;
