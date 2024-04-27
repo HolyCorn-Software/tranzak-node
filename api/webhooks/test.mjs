@@ -16,12 +16,24 @@ import readline from 'node:readline/promises'
 export default async function (client, test) {
     await test("Webhooks", async () => {
         // Use Microsoft's devtunnel, to create a globally reachable URL 
+
+        const throwError = (data) => {
+            throw new Error(`Failed to create tunnel with which to test webhooks`.red, { cause: data })
+        }
+
         console.log(`Creating URL tunnel to use for receiving the test callback`)
-        const data = child_process.execSync('devtunnel create -a').toString()
+        const data = (() => {
+            try {
+                return child_process.execSync('devtunnel create -a').toString()
+            } catch (e) {
+                throwError(e.message.split("\n").slice(1,).join("\n"))
+            }
+        })()
         const tunnelIdRegExp = /Tunnel ID.*: *(.+)/i
         if (!tunnelIdRegExp.test(data)) {
-            throw new Error(`Failed to create tunnel with which to test webhook`, { cause: new Error(data) })
+            throwError(data)
         }
+
 
         const tunnelId = tunnelIdRegExp.exec(data)[1]
 

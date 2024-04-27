@@ -27,6 +27,11 @@ const client = new TRANZAK(
 await test('TRANZAK', async () => {
     await (await import('./api/account/test.mjs')).default(client, test)
     await (await import('./api/payment/test.mjs')).default(client, test)
+    if (mode == 'sandbox') {
+        // Ignore tests for SMS for now, as sandbox lacks virtualized SMS capabilities
+        await (await import('./api/sms/test.mjs')).default(client, test)
+    }
     await (await import('./api/webhooks/test.mjs')).default(client, test)
+    await new Promise(x => setTimeout(x, 2000))
     process.exit()
 })

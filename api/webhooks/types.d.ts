@@ -4,7 +4,6 @@
  * This module contains type definitions for the aspects of the library that deal with webhooks.
  */
 
-import ''
 import EventEmitter from 'node:events'
 import SimpleCollectionTransaction from '../payment/collection/simple/transaction.mjs'
 import SimpleTransferTransaction from '../payment/transfer/simple/transaction.mjs'

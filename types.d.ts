@@ -4,6 +4,7 @@
  * This module (types), contains type definitions for the library.
  */
 
+import ''
 
 
 export declare global {

@@ -4,6 +4,7 @@
  * 
  */
 
+import SMSMessagingSection from "./sms/index.mjs";
 import Transport from "../lib/transport.mjs";
 import AccountManagementSection from "./account/index.mjs";
 import PaymentAPI from "./payment/index.mjs";
@@ -24,6 +25,7 @@ export default class TRANZAK {
         this.payment = new PaymentAPI(transport)
         this.account = new AccountManagementSection(transport)
         this.webhook = new WebhooksProcessor(this)
+        this.sms = new SMSMessagingSection(transport)
     }
 
 }

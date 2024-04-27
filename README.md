@@ -156,7 +156,23 @@ Whenever you receive HTTP data via the server you've configured, parse the body 
 ---
 </div>
 
+## SMS
+Sending SMS messages is quite simple.
 
- 
+Just call `client.sms.send()`
+
+For example
+```
+    const reply = await client.sms.send({
+        phones: ['+237677683958', '+237682477786', '+237676318634'], // Array of phone numbers
+        msg: "Dear team, let's begin." // ASCII characters of text.
+    })
+    console.log(`API server said:\n`, reply)
+```
+### NOTE: 
+    The phone numbers should be formatted according to international standards.
+    Before you send SMS, top-up your SMS balance from the partner portal.
+    An SMS is allowed up to 160 characters. Sending an SMS with more characters, would have you billed accordingly. For example, 320 characters would be two (2) messages. Check the response of the API server to know how you were billed.
+
 
 #### Proudly created, and maintained by [<b>HolyCorn Software</b>](https://github.com/HolyCorn-Software).

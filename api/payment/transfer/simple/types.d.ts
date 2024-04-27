@@ -5,7 +5,7 @@
  */
 
 
-
+import ''
 
 export declare global {
     namespace tranzak_node.payment.transfer.simple {
