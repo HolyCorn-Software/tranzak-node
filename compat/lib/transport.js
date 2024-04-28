@@ -111,6 +111,8 @@ class Transport {
       if (!reply.success) {
         const error = new Error(reply.errorMsg);
         error.fatal = false;
+        error.payload = body;
+        error.endPoint = path;
         if (/not found/gi.test(reply.errorMsg)) {
           // Things like transaction not found, cannot be retried, as it suggests wrong input
           error.fatal = true;

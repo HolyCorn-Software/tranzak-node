@@ -1,3 +1,3 @@
 .
 
-Improved typing, especially with vs code.
+Transpiled for older runtimes.
