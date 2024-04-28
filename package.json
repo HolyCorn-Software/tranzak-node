@@ -1,6 +1,6 @@
 {
   "name": "tranzak-node",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "TRANZAK API client for Nodejs",
   "main": "./compat/index.js",
   "module": "./index.mjs",
