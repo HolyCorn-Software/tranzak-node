@@ -7,7 +7,7 @@
 
 import ''
 
-export declare global {
+ declare global {
     namespace tranzak_node.payment.collection.simple {
 
         /**
