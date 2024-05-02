@@ -7,7 +7,7 @@
 import ''
 
 
-export declare global {
+global {
     namespace tranzak_node.account {
         interface Account {
             accountId: string

@@ -7,7 +7,7 @@
 import ''
 
 
-export declare global {
+global {
     namespace tranzak_node {
         interface Credentials {
             /** ID of the application, as on your [TRANZAK dashboard](https://developer.tranzak.me). */

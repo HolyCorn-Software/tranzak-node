@@ -1,3 +1,3 @@
 .
 
-Fixed minor bug related to typing.
+Fixed minor bug with vs code typings.

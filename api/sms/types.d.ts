@@ -6,7 +6,7 @@
 
 import ''
 
-export declare global {
+global {
     namespace tranzak_node.sms {
         interface InputParams extends ParamsCommon {
             /** 

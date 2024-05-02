@@ -9,7 +9,7 @@
 import './simple/types'
 
 
-export declare global {
+global {
     namespace tranzak_node.payment.transfer {
 
         type STATUS = tranzak_node.payment.STATUS | "PROCESSING"

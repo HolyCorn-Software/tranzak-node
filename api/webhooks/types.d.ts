@@ -8,7 +8,7 @@ import EventEmitter from 'node:events'
 import SimpleCollectionTransaction from '../payment/collection/simple/transaction.mjs'
 import SimpleTransferTransaction from '../payment/transfer/simple/transaction.mjs'
 
-export declare global {
+global {
     namespace tranzak_node.webhook {
 
         type WebhookCallbackData = {
