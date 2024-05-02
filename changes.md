@@ -1,3 +1,3 @@
 .
 
-Fixed minor bug with vs code typings.
+Improved code-completion in vs code.
