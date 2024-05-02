@@ -7,7 +7,7 @@
 
 import ''
 
- export declare global {
+export declare global {
     namespace tranzak_node.payment.transfer.simple {
 
 
@@ -16,7 +16,7 @@ import ''
          * ---
          * More information, by [reading the docs](https://docs.developer.tranzak.me/#common-attributes-that-apply-when-creating-payment-requests34)
          */
-        export interface Params {
+       export interface Params {
             /** 
             * This field, is a unique reference of <=32 characters, to prevent duplicate transfers
             * For more info, check the [Transfers](https://docs.developer.tranzak.me/#common-attributes-that-apply-when-creating-payment-requests34) documentation.  */

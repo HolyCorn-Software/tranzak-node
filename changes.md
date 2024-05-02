@@ -1,3 +1,3 @@
 .
 
-Removed jsconfig.json to improve typing.
+Code refractor.
