@@ -1,3 +1,3 @@
 .
 
-Improved typing.
+Removed jsconfig.json to improve typing.
