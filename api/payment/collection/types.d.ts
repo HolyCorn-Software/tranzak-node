@@ -9,7 +9,7 @@ import './simple/types'
 import './split/types'
 
 
- declare global {
+ export declare global {
     namespace tranzak_node.payment.collection {
 
 

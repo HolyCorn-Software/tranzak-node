@@ -8,7 +8,7 @@
 import './collection/types'
 import './transfer/types'
 
- declare global {
+ export declare global {
     export namespace tranzak_node.payment {
         type STATUS = "PENDING" | "SUCCESSFUL" | "CANCELLED" | "FAILED"
 
