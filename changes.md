@@ -1,3 +1,3 @@
 .
 
-Improved code-completion in vs code.
+Improved commonjs consumption syntax.
