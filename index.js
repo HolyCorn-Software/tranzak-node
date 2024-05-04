@@ -5,4 +5,4 @@
  */
 
 
-export default (require('./compat/index.js')).default
+module.exports = (require('./compat/index.js')).default

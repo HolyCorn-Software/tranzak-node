@@ -1,3 +1,3 @@
 .
 
-Improved commonjs consumption syntax.
+Fixed minor bug with commonjs.
